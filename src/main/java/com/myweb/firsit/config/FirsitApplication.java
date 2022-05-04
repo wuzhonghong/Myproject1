@@ -1,4 +1,4 @@
-package com.myweb.firsit;
+package com.myweb.firsit.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,10 +10,9 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 // @ComponentScan({"com.jiawa", "com.test"})
+
 @ComponentScan("com.myweb")
 @SpringBootApplication
-@EnableScheduling
-@EnableAsync
 public class FirsitApplication {
 
     private static final Logger LOG = LoggerFactory.getLogger(FirsitApplication.class);
