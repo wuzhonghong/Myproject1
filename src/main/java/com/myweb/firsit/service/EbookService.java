@@ -8,6 +8,7 @@ import com.myweb.firsit.mapper.DemoMapper;
 import com.myweb.firsit.mapper.EbookMapper;
 import com.myweb.firsit.req.EbookReq;
 import com.myweb.firsit.resp.EbookResp;
+import com.myweb.firsit.util.CopyUtil;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
@@ -25,13 +26,16 @@ public class EbookService {
         criteria.andNameLike("%"+req.getName()+"%");
         List<Ebook> ebookList = ebookMapper.selectByExample(ebookExample);
 
-        List<EbookResp> respList =new ArrayList<>();
-        for (Ebook ebook : ebookList) {
-            EbookResp ebookResp = new EbookResp();
-            BeanUtils.copyProperties(ebook,ebookResp);
-            respList.add(ebookResp);
+//        List<EbookResp> respList =new ArrayList<>();
+//        for (Ebook ebook : ebookList) {
+//           // EbookResp ebookResp = new EbookResp();
+//            // BeanUtils.copyProperties(ebook,ebookResp);
+        //对象复制
 
-        }
-        return respList;
+//            EbookResp ebookResp = CopyUtil.copy(ebook, EbookResp.class);
+//            respList.add(ebookResp);
+//        }
+        List<EbookResp> list = CopyUtil.copyList(ebookList, EbookResp.class);
+        return list;
     }
 }
