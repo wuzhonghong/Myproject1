@@ -2,6 +2,7 @@ package com.myweb.firsit.controller;
 
 import com.myweb.firsit.domain.Demo;
 import com.myweb.firsit.domain.Ebook;
+import com.myweb.firsit.resp.CommonResp;
 import com.myweb.firsit.service.DemoService;
 import com.myweb.firsit.service.EbookService;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +20,10 @@ public class EbookController {
     private EbookService ebookService;
 
     @GetMapping("/list")
-    public List<Ebook> list(){
-        return ebookService.list();
+    public CommonResp list(){
+        CommonResp<List<Ebook>> resp = new CommonResp<>();
+        List<Ebook> list =ebookService.list();
+        resp.setContent(list);
+        return resp;
     }
     }
