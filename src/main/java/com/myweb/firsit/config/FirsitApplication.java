@@ -1,5 +1,6 @@
 package com.myweb.firsit.config;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -13,6 +14,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @ComponentScan("com.myweb")
 @SpringBootApplication
+@MapperScan("com.myweb.firsit.mapper")
 public class FirsitApplication {
 
     private static final Logger LOG = LoggerFactory.getLogger(FirsitApplication.class);
