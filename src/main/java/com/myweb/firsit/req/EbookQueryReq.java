@@ -1,6 +1,6 @@
 package com.myweb.firsit.req;
 
-public class EbookReq extends PagReq{
+public class EbookQueryReq extends PagReq{
     private Long id;
 
     private String name;

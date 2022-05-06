@@ -1,6 +1,6 @@
-package com.myweb.firsit.resp;
+package com.myweb.firsit.req;
 
-public class EbookResp {
+public class EbookSaveReq {
     private Long id;
 
     private String name;
