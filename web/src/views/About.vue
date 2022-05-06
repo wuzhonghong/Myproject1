@@ -2,8 +2,8 @@
   <a-layout>
     <a-layout-content :style="{ background: '#fff', padding: '24px', margin: 0, minHeight: '280px' }">
       <div class="about">
-        <h2>我是甲蛙，13年Java全栈，慕课网讲师</h2>
-        <div><b>专注Java全栈技术分享，汇总13年实战经验</b></div>
+        <h2>我是网瘾猫，实验项目，在校大学生师</h2>
+        <div><b>关注Java开发以及部分网络安全</b></div>
         <div>
           <b>项目实战：
             <a href="https://coding.imooc.com/class/474.html" target="_blank">
@@ -27,7 +27,7 @@
         </div>
         <br>
         <div><b>QQ：82144921，<span style="color: rgb(194, 79, 74)">阿里云产品使用咨询、购买优惠</span>，加QQ，备注：阿里云</b></div>
-        <div><b>微信号：jiawa1986</b></div>
+        <div><b>微信号：s367076223</b></div>
         <div><b>QQ群：174545069，Java全栈交流群</b></div>
         <div><b>个人全栈技术博客：
           <a href="http://www.jiawablog.com" target="_blank">甲蛙博客</a></b>
