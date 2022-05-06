@@ -38,4 +38,10 @@ public class CategoryController {
         categoryService.save(req);
         return resp;
     }
+    @DeleteMapping("/delete/{id}")
+    public CommonResp delete(@PathVariable Long id) {
+        CommonResp resp = new CommonResp<>();
+        categoryService.delete(id);
+        return resp;
+    }
     }

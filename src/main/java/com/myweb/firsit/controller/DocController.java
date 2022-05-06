@@ -9,6 +9,7 @@ import com.myweb.firsit.service.DocService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.Arrays;
 import java.util.List;
 
 @RestController
@@ -36,6 +37,12 @@ public class DocController {
     public CommonResp save(@RequestBody DocSaveReq req){
         CommonResp resp = new CommonResp<>();
         docService.save(req);
+        return resp;
+    }
+    @DeleteMapping("/delete/{id}")
+    public CommonResp delete(@PathVariable Long id) {
+        CommonResp resp = new CommonResp<>();
+        docService.delete(id);
         return resp;
     }
     }

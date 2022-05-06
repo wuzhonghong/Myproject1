@@ -81,5 +81,8 @@ public class DocService {
         }
         docMapper.updateByPrimaryKey(doc);
     }
+    public void delete(Long id) {
+        docMapper.deleteByPrimaryKey(id);
+    }
     }
 

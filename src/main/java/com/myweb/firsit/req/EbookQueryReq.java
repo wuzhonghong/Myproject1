@@ -1,6 +1,10 @@
 package com.myweb.firsit.req;
 
+import javax.validation.constraints.NotNull;
+
+
 public class EbookQueryReq extends PagReq{
+
     private Long id;
 
     private String name;

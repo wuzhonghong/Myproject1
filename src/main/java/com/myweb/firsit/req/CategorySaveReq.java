@@ -1,14 +1,15 @@
 package com.myweb.firsit.req;
 
 
+import javax.validation.constraints.NotNull;
 
 public class CategorySaveReq {
     private Long id;
 
     private Long parent;
-
+    @NotNull(message = "[名称]不能为空")
     private String name;
-
+    @NotNull(message = "[排序]不能为空")
     private Integer sort;
 
     public Long getId() {

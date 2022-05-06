@@ -81,5 +81,8 @@ public class CategoryService {
         }
         categoryMapper.updateByPrimaryKey(category);
     }
+    public void delete(long id){
+        categoryMapper.deleteByPrimaryKey(id);
+    }
     }
 
