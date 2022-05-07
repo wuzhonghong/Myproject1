@@ -6,6 +6,7 @@ import com.myweb.firsit.resp.CommonResp;
 import com.myweb.firsit.resp.UserQueryResp;
 import com.myweb.firsit.resp.PageResp;
 import com.myweb.firsit.service.UserService;
+import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -27,6 +28,7 @@ public class UserController {
     }
     @PostMapping("/save")
     public CommonResp save(@RequestBody UserSaveReq req){
+        req.setPassword(DigestUtils.md5DigestAsHex(req.getPassword().getBytes()));
         CommonResp resp = new CommonResp<>();
         userService.save(req);
         return resp;
