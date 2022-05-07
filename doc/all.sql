@@ -1,3 +1,5 @@
+-- 测试
+insert into `user` (id, `login_name`, `name`, `password`) values (1, 'test', '测试', 'e70e2222a9d67c4f2eae107533359aa4');
 -- 用户表
 drop table if exists `user`;
 create table `user` (

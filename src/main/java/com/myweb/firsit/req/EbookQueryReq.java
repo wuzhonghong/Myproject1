@@ -1,9 +1,7 @@
 package com.myweb.firsit.req;
 
-import javax.validation.constraints.NotNull;
 
-
-public class EbookQueryReq extends PagReq{
+public class EbookQueryReq extends PageReq {
 
     private Long id;
 

@@ -1,6 +1,6 @@
 package com.myweb.firsit.req;
 
-public class DocQueryReq extends PagReq{
+public class DocQueryReq extends PageReq {
     @Override
     public String toString() {
         return "DocQueryReq{} " + super.toString();
