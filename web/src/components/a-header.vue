@@ -70,7 +70,7 @@
     declare let KEY: any;
 
     export default defineComponent({
-        name: 'the-header',
+        name: 'a-header',
         setup () {
             // 登录后保存
             const user = computed(() => store.state.user);
