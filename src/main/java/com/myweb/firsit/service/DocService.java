@@ -2,8 +2,10 @@ package com.myweb.firsit.service;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.myweb.firsit.domain.Content;
 import com.myweb.firsit.domain.Doc;
 import com.myweb.firsit.domain.DocExample;
+import com.myweb.firsit.mapper.ContentMapper;
 import com.myweb.firsit.mapper.DocMapper;
 import com.myweb.firsit.req.DocQueryReq;
 import com.myweb.firsit.req.DocSaveReq;
@@ -24,6 +26,8 @@ public class DocService {
     private  static final Logger LOG = LoggerFactory.getLogger(DocService.class);
     @Resource
     private DocMapper docMapper;
+    @Resource
+    private ContentMapper contentMapper;
     @Resource
     private SnowFlake snowFlake;
     public List<DocQueryResp> all(DocQueryReq req){
@@ -72,14 +76,21 @@ public class DocService {
     //保存
     public void save(DocSaveReq req){
         Doc doc =CopyUtil.copy(req,Doc.class);
+        Content content =CopyUtil.copy(req, Content.class);
         if(ObjectUtils.isEmpty(req.getId())){
             //新增
             doc.setId(snowFlake.nextId());
             docMapper.insert(doc);
+            content.setId(doc.getId());
+            contentMapper.insert(content);
         }else {
             //更新
         }
         docMapper.updateByPrimaryKey(doc);
+        int count = contentMapper.updateByPrimaryKeyWithBLOBs(content);
+        if(count == 0){
+            contentMapper.insert(content);
+        }
     }
     public void delete(Long id) {
         docMapper.deleteByPrimaryKey(id);
@@ -89,6 +100,10 @@ public class DocService {
         DocExample.Criteria criteria = docExample.createCriteria();
         criteria.andIdIn(ids);
         docMapper.deleteByExample(docExample);
+    }
+    public String findContent(Long id) {
+        Content content =contentMapper.selectByPrimaryKey(id);
+        return content.getContent();
     }
     }
 

@@ -9,6 +9,7 @@ import com.myweb.firsit.service.CategoryService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -26,7 +27,7 @@ public class CategoryController {
         return resp;
     }
     @GetMapping("/list")
-    public CommonResp list(CategoryQueryReq req){
+    public CommonResp list(@Valid CategoryQueryReq req){
         CommonResp<PageResp<CategoryQueryResp>> resp = new CommonResp<>();
         PageResp<CategoryQueryResp> list =categoryService.list(req);
         resp.setContent(list);
